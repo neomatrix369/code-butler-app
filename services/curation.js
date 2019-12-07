@@ -24,7 +24,8 @@ module.exports = class Curation {
   handlePayload(payload) {
     let response;
     let outfit;
-
+    
+    switch (payload) {
       case "CURATION":
         response = Response.genQuickReply(i18n.__("curation.prompt"), [
           {
