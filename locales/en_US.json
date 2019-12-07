@@ -4,23 +4,18 @@
   },
   "menu": {
     "support": "Customer Support",
-    "order": "Order updates",
-    "help": "Talk to an agent",
-    "suggestion": "Outfit suggestions",
-    "shop": "Shop now",
+    "java": "Java",
+    "javascript": "Javascript",
+    "python": "Python",
+    "fortran": "Fortran",
+    "algol": "Algol",
+    "cobol": "Cobol",    
     "start_over": "Start over"
   },
   "get_started": {
-    "welcome": "Hi {{userFirstName}}! Welcome to Code Butler where you'll find styles for every occasion.",
-    "guidance": "At any time, use the menu below to navigate through the features",
-    "help": "What we can do to help you today?"
-  },
-  "leadgen": {
-    "promo": "Hi {{userFirstName}}, finding great outfits is now easier and more convenient.",
-    "title": "50% Coupon",
-    "subtitle": "Here is your coupon",
-    "apply": "Apply discount",
-    "coupon": "Added your coupon to this thread, you can now check out the discounted summer collection"
+    "welcome": "Hi {{userFirstName}}! Welcome to Code Butler where you'll find Coding related questions and answers for levels",
+    "guidance": "At any time, use the menu below to navigate through the  programming languages of your choice",
+    "help": "Are you inspired by any of the programming languages?"
   },
   "curation": {
     "prompt": "Are you looking for an outfit for yourself or someone else?",

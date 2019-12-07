@@ -25,50 +25,6 @@ module.exports = class Curation {
     let response;
     let outfit;
 
-    switch (payload) {
-      case "SUMMER_COUPON":
-        response = [
-          Response.genText(
-            i18n.__("leadgen.promo", {
-              userFirstName: this.user.firstName
-            })
-          ),
-          Response.genGenericTemplate(
-            `${config.appUrl}/coupon.png`,
-            i18n.__("leadgen.title"),
-            i18n.__("leadgen.subtitle"),
-            [Response.genPostbackButton(i18n.__("leadgen.apply"), "COUPON_50")]
-          )
-        ];
-        break;
-
-      case "COUPON_50":
-        outfit = `${this.user.gender}-${this.randomOutfit()}`;
-
-        response = [
-          Response.genText(i18n.__("leadgen.coupon")),
-          Response.genGenericTemplate(
-            `${config.appUrl}/styles/${outfit}.jpg`,
-            i18n.__("curation.title"),
-            i18n.__("curation.subtitle"),
-            [
-              Response.genWebUrlButton(
-                i18n.__("curation.shop"),
-                `${config.shopUrl}/products/${outfit}`
-              ),
-              Response.genPostbackButton(
-                i18n.__("curation.show"),
-                "CURATION_OTHER_STYLE"
-              ),
-              Response.genPostbackButton(
-                i18n.__("curation.sales"),
-                "CARE_SALES"
-              )
-            ]
-          )
-        ];
-        break;
-
       case "CURATION":
         response = Response.genQuickReply(i18n.__("curation.prompt"), [
           {
