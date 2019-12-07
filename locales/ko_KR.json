@@ -1,6 +1,6 @@
 {
   "profile": {
-    "greeting": "{{user_first_name}}님, 안녕하세요. Original Coast Clothing입니다! 시작하기를 클릭하여 샘플 자동 메시지 기능을 활용해보세요. 비슷한 메시지를 만들려면 visit https://fb.me/get-sample-oc를 방문하세요."
+    "greeting": "{{user_first_name}}님, 안녕하세요. Code Butler입니다! 시작하기를 클릭하여 샘플 자동 메시지 기능을 활용해보세요. 비슷한 메시지를 만들려면 visit https://fb.me/get-sample-oc를 방문하세요."
   },
   "menu": {
     "support": "고객 지원",
@@ -11,7 +11,7 @@
     "start_over": "다시 시작"
   },
   "get_started": {
-    "welcome": "{{userFirstName}}님, 안녕하세요! 모든 사람을 위한 스타일이 준비되어 있는 Original Coast Clothing입니다.",
+    "welcome": "{{userFirstName}}님, 안녕하세요! 모든 사람을 위한 스타일이 준비되어 있는 Code Butler입니다.",
     "guidance": "언제든지 아래 메뉴를 사용하여 다양한 기능을 살펴보세요,",
     "help": "무엇을 도와드릴까요?"
   },

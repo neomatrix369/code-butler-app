@@ -1,6 +1,6 @@
 {
   "profile": {
-    "greeting": "Ti diamo il benvenuto su Original Coast Clothing, {{user_first_name}}! Clicca su Inizia per provare i nostri messaggi automatici. Se vuoi creare un'esperienza simile, visita https://fb.me/get-sample-oc."
+    "greeting": "Ti diamo il benvenuto su Code Butler, {{user_first_name}}! Clicca su Inizia per provare i nostri messaggi automatici. Se vuoi creare un'esperienza simile, visita https://fb.me/get-sample-oc."
   },
   "menu": {
     "support": "Assistenza clienti",
@@ -11,7 +11,7 @@
     "start_over": "Ricomincia"
   },
   "get_started": {
-    "welcome": "Ciao {{userFirstName}}! Ti diamo il benvenuto su Original Coast Clothing, dove troverai uno stile adatto a ogni occasione.",
+    "welcome": "Ciao {{userFirstName}}! Ti diamo il benvenuto su Code Butler, dove troverai uno stile adatto a ogni occasione.",
     "guidance": "Usa il menu qui sotto per navigare attraverso le varie funzioni in qualunque momento.",
     "help": "Come possiamo aiutarti oggi?"
   },

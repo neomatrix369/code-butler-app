@@ -1,6 +1,6 @@
 {
   "profile": {
-    "greeting": "欢迎来到 Original Coast Clothing{{user_first_name}}！点击“立即开始”进入我们的自动消息体验示例。如果您想打造类似的体验，请访问 https://fb.me/get-sample-oc"
+    "greeting": "欢迎来到 Code Butler{{user_first_name}}！点击“立即开始”进入我们的自动消息体验示例。如果您想打造类似的体验，请访问 https://fb.me/get-sample-oc"
   },
   "menu": {
     "support": "客户支持",
@@ -11,7 +11,7 @@
     "start_over": "重新开始"
   },
   "get_started": {
-    "welcome": "您好，{{userFirstName}}！欢迎来到 Original Coast Clothing，您可以在这里找到适合各种场合的不同风格服饰。",
+    "welcome": "您好，{{userFirstName}}！欢迎来到 Code Butler，您可以在这里找到适合各种场合的不同风格服饰。",
     "guidance": "您随时可通过下面的菜单进入其他功能",
     "help": "那么今天我们能为您做些什么呢？"
   },

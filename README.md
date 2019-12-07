@@ -2,11 +2,9 @@
 
 Original Coast Clothing (OC) is a fictional clothing brand created to showcase key features of the Messenger Platform. OC leverages key features to deliver a great customer experience. Using this demo as inspiration, you can create a delightful messaging experience that leverages both automation and live customer support. We are also providing the open source code of the app and a guide to deploy the experience on your local environment or remote server.
 
-[Access the Messenger experience](https://m.me/OriginalCoastClothing?ref=GITHUB)
+[Access the Messenger experience](https://m.me/CodeButler?ref=GITHUB)
 
 ![Messenger Experience](public/experience.png)
-
-See the [Developer Documentations on this experience](https://developers.facebook.com/docs/messenger-platform/getting-started/sample-apps/original-coast-clothing).
 
 # Setting up your Messenger App
 
