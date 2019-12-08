@@ -104,16 +104,6 @@ module.exports = class Receive {
             message: this.webhookEvent.message.text
           })
         ),
-        // Response.genQuickReply(i18n.__("get_started.help"), [
-        //   {
-        //     title: i18n.__("menu.suggestion.receive"),
-        //     payload: "CURATION"
-        //   },
-        //   {
-        //     title: i18n.__("menu.help.receive"),
-        //     payload: "PROGRAMMING_LANGUAGE"
-        //   }
-        // ])
       ];
     }
 
@@ -190,7 +180,7 @@ module.exports = class Receive {
     } else if (payload.includes("PROGRAMMING_LANGUAGE") || payload.includes("PROGRAMMING_LANGUAGE_JAVA")) {
       let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
       response = programmingLanguages.handlePayload(payload);
-    } else if (payload.includes("BASIC") || payload.includes("ADVANCE")) {
+    } else if (payload.includes("BASIC") || payload.includes("ADVANCED")) {
       let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
       response = programmingLanguages.handlePayload(payload);
     } else {

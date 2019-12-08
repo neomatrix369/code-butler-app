@@ -159,8 +159,8 @@ module.exports = class Response {
         payload: "BASIC"
       },
       {
-        title: i18n.__("menu.advance"),
-        payload: "ADVANCE"
+        title: i18n.__("menu.advanced"),
+        payload: "ADVANCED"
       }
     ]);
 

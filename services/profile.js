@@ -171,9 +171,9 @@ module.exports = class Profile {
               payload: "LEVEL_BASIC"
             },
             {
-              title: i18n.__("menu.advance"),
+              title: i18n.__("menu.advanced"),
               type: "postback",
-              payload: "LEVEL_ADVANCE"
+              payload: "LEVEL_ADVANCED"
             },
         {
           type: "web_url",

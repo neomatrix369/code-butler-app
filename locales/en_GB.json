@@ -15,7 +15,7 @@
 	"menu": {
 		"support": "Customer Support",
 		"basic": "Basic",
-		"advance": "Advance",
+		"advanced": "Advanced",
 		"java": "Java",
 		"javascript": "Javascript",
 		"python": "Python",
@@ -41,8 +41,8 @@
 		"choose_language": "Is there a specific programming language I can help you with, please select from the below menu.",
 		"choose_another_language": "Is there another programming language I can help you with, please select from the below menu."
 	},
-	"advance": {
-		"hint": "You get to ask advance level questions."
+	"advanced": {
+		"hint": "You get to ask advanced level questions."
 	},
 	"not_available": {
 		"language_1": "Sorry, {{userFirstName}} I'm still working on educating myself with this language. Please take a pick on another language.",

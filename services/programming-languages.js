@@ -73,9 +73,9 @@ module.exports = class ProgrammingLanguages {
             allLanguages()
         )
         break;
-      case "ADVANCE":
+      case "ADVANCED":
         response = Response.genQuickReply(
-            i18n.__("get_started.choose_language") + " " + i18n.__("advance.hint"),
+            i18n.__("get_started.choose_language") + " " + i18n.__("advanced.hint"),
             allLanguages()
         )
         break;
