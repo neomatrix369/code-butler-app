@@ -39,8 +39,8 @@ Before you begin, make sure you have completed all of the requirements listed ab
 Clone this repository on your local machine:
 
 ```bash
-$ git clone git@github.com:neomatrix369/code-butler-bot.git
-$ cd code-butler-bot
+$ git clone git@github.com:neomatrix369/code-butler-app.git
+$ cd code-butler-app
 ```
 
 You will need:
@@ -56,12 +56,6 @@ You will need:
 
 ```bash
 $ npm install
-```
-
-Alternatively, you can use [Yarn](https://yarnpkg.com/en/):
-
-```bash
-$ yarn install
 ```
 
 #### 2. Install Local Tunnel
