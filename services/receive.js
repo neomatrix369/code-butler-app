@@ -13,7 +13,8 @@
 const Response = require("./response"),
   ProgrammingLanguages = require("./programming-languages"),
   GraphAPi = require("./graph-api"),
-  i18n = require("../i18n.config");
+  // i18n = require("../i18n.config");
+  i18n = require("../i18n");
 
 module.exports = class Receive {
   constructor(user, webhookEvent) {
@@ -85,7 +86,7 @@ module.exports = class Receive {
     } else if (message.includes(i18n.__("care.help").toLowerCase())) {
       let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
       response = programmingLanguages.handlePayload("LEVEL");
-    } else if (message.includes(i18n.__("getting_started.choose_language").toLowerCase())) {
+    } else if (message.includes(i18n.__("get_started.choose_language").toLowerCase())) {
       let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
       response = programmingLanguages.handlePayload("PROGRAMMING_LANGUAGE");
     } else {

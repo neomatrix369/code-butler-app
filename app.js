@@ -19,7 +19,6 @@ const express = require("express"),
   GraphAPi = require("./services/graph-api"),
   User = require("./services/user"),
   config = require("./services/config"),
-  i18n = require("./i18n.config"),
   app = express();
 
 var users = {};
@@ -135,23 +134,24 @@ app.post("/webhook", (req, res) => {
           })
           .finally(() => {
             users[senderPsid] = user;
-            i18n.setLocale(user.locale);
+            // i18n.setLocale(user.locale);
             console.log(
               "New Profile PSID:",
               senderPsid,
               "with locale:",
-              i18n.getLocale()
+              "en_GB"  // i18n.getLocale()
             );
             let receiveMessage = new Receive(users[senderPsid], webhookEvent);
             return receiveMessage.handleMessage();
           });
       } else {
-        i18n.setLocale(users[senderPsid].locale);
+        // i18n.setLocale(users[senderPsid].locale);
         console.log(
           "Profile already exists PSID:",
           senderPsid,
           "with locale:",
-          i18n.getLocale()
+          "en_GB"
+          // i18n.getLocale()
         );
         let receiveMessage = new Receive(users[senderPsid], webhookEvent);
         return receiveMessage.handleMessage();
