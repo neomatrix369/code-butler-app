@@ -4,7 +4,7 @@ Code Butler is bot that assits learning about coding and programming languages i
 
 [Access the Messenger experience](https://m.me/CodeButler?ref=GITHUB)
 
-![Messenger Experience](code-butler-flow.png)
+![Messenger Experience](code-butler-flow.png) ![Messenger Experience (AI)](code-butler-flow-ai-questions.png)
 
 # Setting up your Messenger App
 
