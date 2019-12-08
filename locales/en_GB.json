@@ -35,8 +35,8 @@
 		"choose_language": "Choose the programming language you would like to talk about from the below menu"
 	},
 	"not_available": {
-		"language_1": "Sorry, I'm still working on educating myself with this language",
-		"language_2": "Life is tricky, I will be better at this language soon"
+		"language_1": "Sorry, {{userFirstName}} I'm still working on educating myself with this language. Please take a pick on another language.",
+		"language_2": "Life is tricky, I will be better at this language soon, {{userFirstName}}. Try another one for a change."
 	},
 	"curation": {
 		"prompt": "Are you looking for an outfit for yourself or someone else?",

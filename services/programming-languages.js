@@ -16,33 +16,20 @@ const Response = require("./response"),
   // i18n = require("../i18n.config");
   i18n = require("../i18n");
 
-module.exports = class ProgrammingLanguages {
-  constructor(user, webhookEvent) {
-    this.user = user;
-    this.webhookEvent = webhookEvent;
+const getRandomKey = function(list) {
+  const max = list.length
+  var result = ""
+  if (max > 0) {
+    const randomIndex = Math.floor(Math.random() * max)
+    result = list[randomIndex]
+  } else {
+    result = "" 
   }
+  return result
+}
 
-  getRandomKey(list) {
-    const max = list.length
-    var result = ""
-    if (max > 0) {
-      const randomIndex = Math.floor(Math.random() * max)
-      result = list[randomIndex]
-    } else {
-      result = "" 
-    }
-    return result
-  }
-
-  handlePayload(payload) {
-    let response;
-
-    switch (payload) {
-      case "BASIC":
-      case "ADVANCE":
-        response = Response.genQuickReply(
-          i18n.__("get_started.choose_language"),
-          [
+const allLanguages = function() {
+  return [
             {
               title: i18n.__("menu.java"),
               payload: "PROGRAMMING_LANGUAGE_JAVA"
@@ -67,8 +54,25 @@ module.exports = class ProgrammingLanguages {
               title: i18n.__("menu.fortran"),
               payload: "PROGRAMMING_LANGUAGE_FORTRAN"
             }
-          ]
-        );
+  ];
+}
+
+module.exports = class ProgrammingLanguages {
+  constructor(user, webhookEvent) {
+    this.user = user;
+    this.webhookEvent = webhookEvent;
+  }
+
+  handlePayload(payload) {
+    let response;
+
+    switch (payload) {
+      case "BASIC":
+      case "ADVANCE":
+        response = Response.genQuickReply(
+            i18n.__("get_started.choose_language"),
+            allLanguages()
+        )
         break;
 
       case "PROGRAMMING_LANGUAGE_JAVA":
@@ -82,14 +86,14 @@ module.exports = class ProgrammingLanguages {
       case "PROGRAMMING_LANGUAGE_ALGOL":
       case "PROGRAMMING_LANGUAGE_COBOL":
       case "PROGRAMMING_LANGUAGE_FORTRAN":
-        randomResponse = getRandomKey("not_available.language_1", "not_available.language_2")
-        response = Response.genQuickReply(
-          i18n.__(randomResponse, {
+        const responseText = i18n.__(getRandomKey(["not_available.language_1", "not_available.language_2"]), {
             userFirstName: this.user.firstName
-          }),
-          []
-        );
-      break;
+        }) + " " + i18n.__("get_started.choose_language");
+        response = Response.genQuickReply(
+            responseText,
+            allLanguages()
+        )
+        break;
     }
 
     return response;
