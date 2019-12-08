@@ -1,10 +1,10 @@
-# Original Coast Clothing Messenger Bot
+# Code Butler bot
 
-Original Coast Clothing (OC) is a fictional clothing brand created to showcase key features of the Messenger Platform. OC leverages key features to deliver a great customer experience. Using this demo as inspiration, you can create a delightful messaging experience that leverages both automation and live customer support. We are also providing the open source code of the app and a guide to deploy the experience on your local environment or remote server.
+Code Butler is bot that assits learning about coding and programming languages in a fun way, created to showcase key features of the Messenger Platform. OC leverages key features to deliver a great customer experience. Using this demo as inspiration, you can create a delightful messaging experience.
 
 [Access the Messenger experience](https://m.me/CodeButler?ref=GITHUB)
 
-![Messenger Experience](public/experience.png)
+![Messenger Experience](code-butler-flow.png)
 
 # Setting up your Messenger App
 
@@ -39,8 +39,8 @@ Before you begin, make sure you have completed all of the requirements listed ab
 Clone this repository on your local machine:
 
 ```bash
-$ git clone git@github.com:fbsamples/original-coast-clothing.git
-$ cd original-coast-clothing
+$ git clone git@github.com:neomatrix369/code-butler-bot.git
+$ cd code-butler-bot
 ```
 
 You will need:
@@ -137,6 +137,6 @@ git push heroku master
   Send a message to your Page from Facebook or in Messenger, if your webhook receives an event, you have fully set up your app! Voilà!
 
 ## License
-Sample Messenger App Original Coast Clothing is BSD licensed, as found in the LICENSE file.
+Sample Messenger App Code Butler is BSD licensed, as found in the LICENSE file.
 
 See the [CONTRIBUTING](CONTRIBUTING.md) file for how to help out.

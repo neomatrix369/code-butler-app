@@ -37,6 +37,3 @@ module.exports = {
 		// set user locale
 	}
 }
-
-
-// module.exports = getLocale, getLocales, __, setLocale;
