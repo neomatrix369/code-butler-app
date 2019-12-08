@@ -10,7 +10,7 @@ module.exports = {
 	  return ["en_GB"];
 	},
 
-	__: function(token) {
+	__: function(token, substitute_variables) {
 	  const directory = path.join(__dirname, "locales");
 	  const localeFileName = path.join(directory, this.getLocale() + ".json");
 	  const localeFileContent = fs.readFileSync(localeFileName, "utf8");
@@ -21,7 +21,11 @@ module.exports = {
 	  const key_in_grouping = splitToken[1];
 
 	  try {
-	  	return localeFileAsJson[grouping][key_in_grouping];	
+	  	result = localeFileAsJson[grouping][key_in_grouping];
+	  	for (each in substitute_variables) {
+	  		result = result.replace("{{" + each + "}}", substitute_variables[each]);
+	  	}
+	  	return result;
 	  } catch(error) {
 	  	console.log("Error message: " + error.message);
 	  	console.log(`Error occurred for token='${token}'`);

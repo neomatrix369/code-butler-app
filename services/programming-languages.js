@@ -72,12 +72,9 @@ module.exports = class ProgrammingLanguages {
         break;
 
       case "PROGRAMMING_LANGUAGE_JAVA":
-        response = Response.genQuickReply(
-          i18n.__("java.welcome", {
-            userFirstName: this.user.firstName
-          }),
-          []
-        );
+        response = { 
+          text: i18n.__("java.welcome") 
+        };
         break;
 
       case "PROGRAMMING_LANGUAGE_JAVASCRIPT":

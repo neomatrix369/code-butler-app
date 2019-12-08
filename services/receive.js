@@ -96,7 +96,6 @@ module.exports = class Receive {
             message: this.webhookEvent.message.text
           })
         ),
-        Response.genText(i18n.__("get_started.guidance")),
         Response.genQuickReply(i18n.__("get_started.help"), [
           {
             title: i18n.__("menu.suggestion.receive"),
@@ -187,13 +186,7 @@ module.exports = class Receive {
       let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
       response = programmingLanguages.handlePayload(payload);
     } else if (payload.includes("PROGRAMMING_LANGUAGE_JAVA")) {
-      response = Response.genText(i18n.__("java.welcome"),
-        [
-          {
-            title: i18n.__("java.one"),
-            payload: "JAVA_ONE"
-          }
-        ])
+      response = programmingLanguages.handlePayload(payload);
     } else {
       response = {
         text: `This is a default postback message for payload: ${payload}!`

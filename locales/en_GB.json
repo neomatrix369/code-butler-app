@@ -3,7 +3,7 @@
 		"greeting": "Welcome to Code Butler {{user_first_name}}! Click get started to enjoy our sample automated messaging experience. If you want to build a similar one visit https://fb.me/get-sample-oc"
 	},
 	"java": {
-		"welcome": "That's a great choice, one of the most trending languages since 25 years now",
+		"welcome": "That's a great choice, one of the most trending languages since 25 years now. Please ask away.",
 		"one": "Ask away any question about Java, I will try to answer"
 	},
 	"menu": {
