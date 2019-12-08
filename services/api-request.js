@@ -32,7 +32,7 @@ module.exports = {
   askQuestion: function(question, success) {
     console.log("askQuestion.success = " + success);
     if (!question.includes("<mask>")) {
-      question = question + "<mask>"
+      question = question.trim() + " <mask>"
     }
 
     this.performRequest(
