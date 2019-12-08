@@ -4,7 +4,13 @@
 	},
 	"java": {
 		"welcome": "That's a great choice, one of the most trending languages since 25 years now. Please ask away.",
-		"one": "Ask away any question about Java, I will try to answer"
+		"one": "Ask away any question about Java, I will try to answer",
+		"when_created_question": "When was Java created?",
+		"when_created_answer": "In the year 1995",
+		"who_created_question": "Who created Java?",
+		"who_created_answer": "James Gosling",
+		"best_ide_question": "What is the best Java IDE?",
+		"best_ide_answer": "IntelliJ"
 	},
 	"menu": {
 		"support": "Customer Support",

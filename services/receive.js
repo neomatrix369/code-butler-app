@@ -89,23 +89,31 @@ module.exports = class Receive {
     } else if (message.includes(i18n.__("get_started.choose_language").toLowerCase())) {
       let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
       response = programmingLanguages.handlePayload("PROGRAMMING_LANGUAGE");
+
+    } else if (i18n.__("java.when_created_question").toLowerCase().includes(message)) {
+      response = Response.genText(i18n.__("java.when_created_answer")) 
+    } else if (i18n.__("java.who_created_question").toLowerCase().includes(message)) {
+      response = Response.genText(i18n.__("java.who_created_answer")) 
+    } else if (i18n.__("java.best_ide_question").toLowerCase().includes(message)) {
+      response = Response.genText(i18n.__("java.best_ide_answer")) 
     } else {
+      console.log("this.webhookEvent.message: ", JSON.stringify(this.webhookEvent.message));
       response = [
         Response.genText(
           i18n.__("fallback.any", {
             message: this.webhookEvent.message.text
           })
         ),
-        Response.genQuickReply(i18n.__("get_started.help"), [
-          {
-            title: i18n.__("menu.suggestion.receive"),
-            payload: "CURATION"
-          },
-          {
-            title: i18n.__("menu.help.receive"),
-            payload: "PROGRAMMING_LANGUAGE"
-          }
-        ])
+        // Response.genQuickReply(i18n.__("get_started.help"), [
+        //   {
+        //     title: i18n.__("menu.suggestion.receive"),
+        //     payload: "CURATION"
+        //   },
+        //   {
+        //     title: i18n.__("menu.help.receive"),
+        //     payload: "PROGRAMMING_LANGUAGE"
+        //   }
+        // ])
       ];
     }
 
