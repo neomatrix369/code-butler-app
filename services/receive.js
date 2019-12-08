@@ -13,8 +13,8 @@
 const Response = require("./response"),
   ProgrammingLanguages = require("./programming-languages"),
   GraphAPi = require("./graph-api"),
-  // i18n = require("../i18n.config");
-  i18n = require("../i18n");
+  i18n = require("../i18n"),
+  ApiRequest = require("./api-request")
 
 module.exports = class Receive {
   constructor(user, webhookEvent) {
@@ -75,8 +75,10 @@ module.exports = class Receive {
     let greeting = this.firstEntity(this.webhookEvent.message.nlp, "greetings");
 
     let message = this.webhookEvent.message.text.trim().toLowerCase();
+    let originalMessage = this.webhookEvent.message.text.trim();
 
     let response;
+    let that = this;
 
     if (
       (greeting && greeting.confidence > 0.8) ||
@@ -97,17 +99,26 @@ module.exports = class Receive {
     } else if (i18n.__("java.best_ide_question").toLowerCase().includes(message)) {
       response = Response.genText(i18n.__("java.best_ide_answer")) 
     } else {
-      console.log("this.webhookEvent.message: ", JSON.stringify(this.webhookEvent.message));
-      response = [
-        Response.genText(
-          i18n.__("fallback.any", {
-            message: this.webhookEvent.message.text
-          })
-        ),
-      ];
+      console.log("original message = ", originalMessage);
+      setTimeout( () => ApiRequest.askQuestion(originalMessage, function(answer){
+        const answer_annotated = answer.replace("'", "")
+                                       .replace("'", "")
+                                        + " (AI Model)";
+        console.log("answer = ", answer_annotated);
+     
+        if (!answer || ( !answer.includes(originalMessage ))) {
+             that.sendMessage(Response.genText(
+                  i18n.__("fallback.any", {
+                    message: this.webhookEvent.message.text
+                  })
+                ))
+        } else {
+          that.sendMessage(Response.genText(answer_annotated))
+        }
+      }), 1000);
     }
 
-    return response;
+    return Response.genText("(thinking...)");
   }
 
   // Handles mesage events with attachments
