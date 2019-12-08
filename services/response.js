@@ -124,26 +124,71 @@ module.exports = class Response {
     return response;
   }
 
-  static genNuxMessage(user) {
+  static getRandomKey(list) {
+    const max = list.length
+    var result = ""
+    if (max > 0) {
+      const randomIndex = Math.floor(Math.random() * max)
+      result = list[randomIndex]
+    } else {
+      result = "" 
+    }
+    return result
+  }
+
+  static getRandomWelcomeMessageKey() {
+    return this.getRandomKey([
+      "get_started.welcome_1", 
+      "get_started.welcome_2", 
+      "get_started.welcome_3"
+    ])
+  }
+
+  static genNuxMessage(user) {   
     let welcome = this.genText(
-      i18n.__("get_started.welcome", {
+      i18n.__(this.getRandomWelcomeMessageKey(), {
         userFirstName: user.firstName
       })
     );
 
     let guide = this.genText(i18n.__("get_started.guidance"));
 
-    let curation = this.genQuickReply(i18n.__("get_started.help"), [
-      {
-        title: i18n.__("menu.suggestion"),
-        payload: "CURATION"
+    let level = this.genQuickReply(i18n.__("get_started.help"), [{
+        title: i18n.__("menu.basic"),
+        payload: "BASIC"
       },
       {
-        title: i18n.__("menu.help"),
-        payload: "CARE_HELP"
+        title: i18n.__("menu.advance"),
+        payload: "ADVANCE"
       }
     ]);
 
-    return [welcome, guide, curation];
+    let languages = this.genQuickReply(i18n.__("get_started.help"), [{
+        title: i18n.__("menu.java"),
+        payload: "PROGRAMMING_LANGUAGE_JAVA"
+      },
+      {
+        title: i18n.__("menu.javascript"),
+        payload: "PROGRAMMING_LANGUAGE_JAVASCRIPT"
+      },
+      {
+        title: i18n.__("menu.python"),
+        payload: "PROGRAMMING_LANGUAGE_PYTHON"
+      },
+      {
+        title: i18n.__("menu.cobol"),
+        payload: "PROGRAMMING_LANGUAGE_COBOL"
+      },
+      {
+        title: i18n.__("menu.algol"),
+        payload: "PROGRAMMING_LANGUAGE_ALGOL"
+      },
+      {
+        title: i18n.__("menu.fortran"),
+        payload: "PROGRAMMING_LANGUAGE_FORTRAN"
+      }
+    ]);
+
+    return [welcome, guide, level];
   }
 };

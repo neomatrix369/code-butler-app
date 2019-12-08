@@ -10,11 +10,8 @@
 
 "use strict";
 
-const Curation = require("./curation"),
-  Order = require("./order"),
-  Response = require("./response"),
-  Care = require("./care"),
-  Survey = require("./survey"),
+const Response = require("./response"),
+  ProgrammingLanguages = require("./programming-languages"),
   GraphAPi = require("./graph-api"),
   i18n = require("../i18n.config");
 
@@ -85,13 +82,12 @@ module.exports = class Receive {
       message.includes("start over")
     ) {
       response = Response.genNuxMessage(this.user);
-    } else if (Number(message)) {
-      response = Order.handlePayload("ORDER_NUMBER");
-    } else if (message.includes("#")) {
-      response = Survey.handlePayload("CSAT_SUGGESTION");
     } else if (message.includes(i18n.__("care.help").toLowerCase())) {
-      let care = new Care(this.user, this.webhookEvent);
-      response = care.handlePayload("CARE_HELP");
+      let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
+      response = programmingLanguages.handlePayload("LEVEL");
+    } else if (message.includes(i18n.__("getting_started.choose_language").toLowerCase())) {
+      let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
+      response = programmingLanguages.handlePayload("PROGRAMMING_LANGUAGE");
     } else {
       response = [
         Response.genText(
@@ -102,12 +98,12 @@ module.exports = class Receive {
         Response.genText(i18n.__("get_started.guidance")),
         Response.genQuickReply(i18n.__("get_started.help"), [
           {
-            title: i18n.__("menu.suggestion"),
+            title: i18n.__("menu.suggestion.receive"),
             payload: "CURATION"
           },
           {
-            title: i18n.__("menu.help"),
-            payload: "CARE_HELP"
+            title: i18n.__("menu.help.receive"),
+            payload: "PROGRAMMING_LANGUAGE"
           }
         ])
       ];
@@ -126,8 +122,8 @@ module.exports = class Receive {
 
     response = Response.genQuickReply(i18n.__("fallback.attachment"), [
       {
-        title: i18n.__("menu.help"),
-        payload: "CARE_HELP"
+        title: i18n.__("menu.help.receive"),
+        payload: "PROGRAMMING_LANGUAGE"
       },
       {
         title: i18n.__("menu.start_over"),
@@ -175,7 +171,7 @@ module.exports = class Receive {
     GraphAPi.callFBAEventsAPI(this.user.psid, payload);
 
     let response;
-
+    console.log(payload)
     // Set the response based on the payload
     if (
       payload === "GET_STARTED" ||
@@ -183,35 +179,20 @@ module.exports = class Receive {
       payload === "GITHUB"
     ) {
       response = Response.genNuxMessage(this.user);
-    } else if (payload.includes("CURATION") || payload.includes("COUPON")) {
-      let curation = new Curation(this.user, this.webhookEvent);
-      response = curation.handlePayload(payload);
-    } else if (payload.includes("CARE")) {
-      let care = new Care(this.user, this.webhookEvent);
-      response = care.handlePayload(payload);
-    } else if (payload.includes("ORDER")) {
-      response = Order.handlePayload(payload);
-    } else if (payload.includes("CSAT")) {
-      response = Survey.handlePayload(payload);
-    } else if (payload.includes("CHAT-PLUGIN")) {
-      response = [
-        Response.genText(i18n.__("chat_plugin.prompt")),
-        Response.genText(i18n.__("get_started.guidance")),
-        Response.genQuickReply(i18n.__("get_started.help"), [
+    } else if (payload.includes("PROGRAMMING_LANGUAGE")) {
+      let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
+      response = programmingLanguages.handlePayload(payload);
+    } else if (payload.includes("BASIC")) {
+      let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
+      response = programmingLanguages.handlePayload(payload);
+    } else if (payload.includes("PROGRAMMING_LANGUAGE_JAVA")) {
+      response = Response.genText(i18n.__("java.welcome"),
+        [
           {
-            title: i18n.__("care.order"),
-            payload: "CARE_ORDER"
-          },
-          {
-            title: i18n.__("care.billing"),
-            payload: "CARE_BILLING"
-          },
-          {
-            title: i18n.__("care.other"),
-            payload: "CARE_OTHER"
+            title: i18n.__("java.one"),
+            payload: "JAVA_ONE"
           }
         ])
-      ];
     } else {
       response = {
         text: `This is a default postback message for payload: ${payload}!`
@@ -228,12 +209,12 @@ module.exports = class Receive {
 
     let response = Response.genQuickReply(welcomeMessage, [
       {
-        title: i18n.__("menu.suggestion"),
+        title: i18n.__("menu.suggestion.receive"),
         payload: "CURATION"
       },
       {
-        title: i18n.__("menu.help"),
-        payload: "CARE_HELP"
+        title: i18n.__("menu.help.receive.PrivateReply"),
+        payload: "PROGRAMMING_LANGUAGE"
       }
     ]);
 

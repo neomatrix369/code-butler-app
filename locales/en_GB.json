@@ -1,0 +1,17 @@
+{
+	"get_started": {
+		"guidance": "get_started.guidance",
+		"help": "get_started.help",
+		"welcome_2": "get_started.welcome_2"
+	},
+	"menu": {
+		"basic": "menu.basic",
+		"advance": "menu.advance",
+		"java": "menu.java",
+		"javascript": "menu.javascript",
+		"python": "menu.python",
+		"cobol": "menu.cobol",
+		"algol": "menu.algol",
+		"fortran": "menu.fortran"
+	}
+}

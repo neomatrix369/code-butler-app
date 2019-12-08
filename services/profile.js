@@ -128,7 +128,7 @@ module.exports = class Profile {
   }
 
   getGreetingText(locale) {
-    let param = locale === "en_US" ? "default" : locale;
+    let param = locale === "en_GB" ? "default" : locale;
 
     i18n.setLocale(locale);
 
@@ -144,7 +144,8 @@ module.exports = class Profile {
   }
 
   getMenuItems(locale) {
-    let param = locale === "en_US" ? "default" : locale;
+    console.log(locale)
+    let param = locale === "en_GB" ? "default" : locale;
 
     i18n.setLocale(locale);
 
@@ -160,19 +161,19 @@ module.exports = class Profile {
               title: i18n.__("menu.order"),
               type: "postback",
               payload: "TRACK_ORDER"
-            },
-            {
-              title: i18n.__("menu.help"),
-              type: "postback",
-              payload: "CARE_HELP"
             }
           ]
         },
-        {
-          title: i18n.__("menu.suggestion"),
-          type: "postback",
-          payload: "CURATION"
-        },
+            {
+              title: i18n.__("menu.basic"),
+              type: "postback",
+              payload: "LEVEL_BASIC"
+            },
+            {
+              title: i18n.__("menu.advance"),
+              type: "postback",
+              payload: "LEVEL_ADVANCE"
+            },
         {
           type: "web_url",
           title: i18n.__("menu.shop"),

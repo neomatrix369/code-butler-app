@@ -1,69 +1,94 @@
 {
-  "profile": {
-    "greeting": "Welcome to Code Butler {{user_first_name}}! Click get started to enjoy our sample automated messaging experience. If you want to build a similar one visit https://fb.me/get-sample-oc"
-  },
-  "menu": {
-    "support": "Customer Support",
-    "java": "Java",
-    "javascript": "Javascript",
-    "python": "Python",
-    "fortran": "Fortran",
-    "algol": "Algol",
-    "cobol": "Cobol",    
-    "start_over": "Start over"
-  },
-  "get_started": {
-    "welcome": "Hi {{userFirstName}}! Welcome to Code Butler where you'll find Coding related questions and answers for levels",
-    "guidance": "At any time, use the menu below to navigate through the  programming languages of your choice",
-    "help": "Are you inspired by any of the programming languages?"
-  },
-  "curation": {
-    "prompt": "Are you looking for an outfit for yourself or someone else?",
-    "occasion": "Great! Let's get started. First, is there an occasion in mind?",
-    "price": "How much are you looking to spend?",
-    "me": "For me!",
-    "someone": "Someone else",
-    "work": "Work",
-    "dinner": "Dinner",
-    "party": "Party",
-    "sales": "Talk to sales",
-    "shop": "Shop this look",
-    "title": "Summer collection 2019",
-    "subtitle": "Featured outfit",
-    "show": "Another look"
-  },
-  "order": {
-    "prompt": "We'll be happy to help you. Select from the following",
-    "search": "Search by order number",
-    "account": "Link my Account",
-    "dialog": "Account linking dialog",
-    "searching": "Searching for your last order...",
-    "number": "Sure, please write the order number",
-    "status": "Your order is on it’s way, expect to have it in 3 days."
-  },
-  "care": {
-    "prompt": "To connect you with the right team please let me know what this is about?",
-    "order": "Order Inquiries",
-    "billing": "Billing Issues",
-    "other": "Other",
-    "issue": "Hi {{userFirstName}}, my name is {{agentFirstName}}, I'm here to assist you with any questions you might have about your {{topic}}.",
-    "default": "Hi {{userFirstName}}, my name is {{agentFirstName}}, I'm here to assist you today. How can I help you?",
-    "style": "Hi {{userFirstName}}, my name is {{agentFirstName}}, I’m here to answer questions you might have on our summer styles",
-    "end": "This is as far as the demo goes. Leverage the power of the messenger platform for your business. See https://fb.me/get-sample-oc to learn how to build a similar experience",
-    "help": "Help"
-  },
-  "survey": {
-    "prompt": "Hi, want to get quick feedback on your recent experience with {{agentFirstName}}",
-    "positive": "Thanks for the feedback",
-    "neutral": "Thanks for the feedback, if there something we should improve feel free to comment with #suggestion",
-    "negative": "Thanks for telling us. Sorry to hear that, if there something we can do to turn this let us know",
-    "suggestion": "Your suggestion has been recorded for future review by the team. If this is something we need to get back to you right now just comment \"help\""
-  },
-  "chat_plugin": {
-    "prompt": "Thanks for visiting our store, be sure to check out all the great styles we have on the summer section."
-  },
-  "fallback": {
-    "any": "Sorry, but I don’t recognize \"{{message}}\".",
-    "attachment": "Thanks for sending this attachment, we can connect you to an agent to review it or we can start over"
-  }
+	"profile": {
+		"greeting": "Welcome to Code Butler {{user_first_name}}! Click get started to enjoy our sample automated messaging experience. If you want to build a similar one visit https://fb.me/get-sample-oc"
+	},
+	"java": {
+		"welcome": "That's a great choice, one of the most trending languages since 25 years now",
+		"one": "Ask away any question about Java, I will try to answer"
+	},
+	"menu": {
+		"support": "Customer Support",
+		"basic": "Basic",
+		"advance": "Advance",
+		"java": "Java",
+		"javascript": "Javascript",
+		"python": "Python",
+		"fortran": "Fortran",
+		"algol": "Algol",
+		"cobol": "Cobol",
+		"start_over": "Start over",
+		"order": "menu.order",
+		"help": {
+			"receive": "menu.help.receive"
+		},
+		"suggestion": {
+			"receive": "menu.suggestion.receive"
+		},
+		"shop": "menu.shop"
+	},
+	"get_started": {
+		"welcome_1": "Hello {{userFirstName}}! Welcome to Code Butler, I will help you learn to code",
+		"welcome_2": "Hello {{userFirstName}}, nice to meet you. I can help you get into coding!",
+		"welcome_3": "Greetings {{userFirstName}}, a pleasure to meet you. I will help you improve your coding",
+		"guidance": "At any time, use the menu below to navigate through the options your choice",
+		"help": "What level do you want our conversation to be at?",
+		"choose_language": "Choose the programming language you would like to talk about from the below menu"
+	},
+	"not_available": {
+		"language_1": "Sorry, I'm still working on educating myself with this language",
+		"language_2": "Life is tricky, I will be better at this language soon",
+	},
+	"curation": {
+		"prompt": "Are you looking for an outfit for yourself or someone else?",
+		"occasion": "Great! Let's get started. First, is there an occasion in mind?",
+		"price": "How much are you looking to spend?",
+		"me": "For me!",
+		"someone": "Someone else",
+		"work": "Work",
+		"dinner": "Dinner",
+		"party": "Party",
+		"sales": "Talk to sales",
+		"shop": "Shop this look",
+		"title": "Summer collection 2019",
+		"subtitle": "Featured outfit",
+		"show": "Another look"
+	},
+	"order": {
+		"prompt": "We'll be happy to help you. Select from the following",
+		"search": "Search by order number",
+		"account": "Link my Account",
+		"dialog": "Account linking dialog",
+		"searching": "Searching for your last order...",
+		"number": "Sure, please write the order number",
+		"status": "Your order is on it’s way, expect to have it in 3 days."
+	},
+	"languages": {
+		"prompt": "To connect you with the right team please let me know what this is about?",
+		"order": "Order Inquiries",
+		"billing": "Billing Issues",
+		"other": "Other",
+		"issue": "Hi {{userFirstName}}, my name is {{agentFirstName}}, I'm here to assist you with any questions you might have about your {{topic}}.",
+		"default": "Hi {{userFirstName}}, my name is {{agentFirstName}}, I'm here to assist you today. How can I help you?",
+		"style": "Hi {{userFirstName}}, my name is {{agentFirstName}}, I’m here to answer questions you might have on our summer styles",
+		"end": "This is as far as the demo goes. Leverage the power of the messenger platform for your business. See https://fb.me/get-sample-oc to learn how to build a similar experience",
+		"help": "Help"
+	},
+	"survey": {
+		"prompt": "Hi, want to get quick feedback on your recent experience with {{agentFirstName}}",
+		"positive": "Thanks for the feedback",
+		"neutral": "Thanks for the feedback, if there something we should improve feel free to comment with #suggestion",
+		"negative": "Thanks for telling us. Sorry to hear that, if there something we can do to turn this let us know",
+		"suggestion": "Your suggestion has been recorded for future review by the team. If this is something we need to get back to you right now just comment \"help\""
+	},
+	"fallback": {
+		"any": "Sorry, but I don’t recognize \"{{message}}\".",
+		"attachment": "Thanks for sending this attachment, we can connect you to an agent to review it or we can start over"
+	},
+	"care": {
+		"help": "care.help",
+		"prompt": "care.prompt"
+	},
+	"choose": {
+		"language": "choose.language"
+	}
 }
