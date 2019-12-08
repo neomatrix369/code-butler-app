@@ -179,13 +179,11 @@ module.exports = class Receive {
       payload === "GITHUB"
     ) {
       response = Response.genNuxMessage(this.user);
-    } else if (payload.includes("PROGRAMMING_LANGUAGE")) {
+    } else if (payload.includes("PROGRAMMING_LANGUAGE") || payload.includes("PROGRAMMING_LANGUAGE_JAVA")) {
       let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
       response = programmingLanguages.handlePayload(payload);
-    } else if (payload.includes("BASIC")) {
+    } else if (payload.includes("BASIC") || payload.includes("ADVANCE")) {
       let programmingLanguages = new ProgrammingLanguages(this.user, this.webhookEvent);
-      response = programmingLanguages.handlePayload(payload);
-    } else if (payload.includes("PROGRAMMING_LANGUAGE_JAVA")) {
       response = programmingLanguages.handlePayload(payload);
     } else {
       response = {

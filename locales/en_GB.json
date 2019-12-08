@@ -27,12 +27,16 @@
 		"shop": "menu.shop"
 	},
 	"get_started": {
-		"welcome_1": "Hello {{userFirstName}}! Welcome to Code Butler, I will help you learn to code",
+		"welcome_1": "Hello {{userFirstName}}! Welcome to Code Butler, I will help you learn to code.",
 		"welcome_2": "Hello {{userFirstName}}, nice to meet you. I can help you get into coding!",
-		"welcome_3": "Greetings {{userFirstName}}, a pleasure to meet you. I will help you improve your coding",
-		"guidance": "At any time, use the menu below to navigate through the options your choice",
+		"welcome_3": "Greetings {{userFirstName}}, a pleasure to meet you. I will help you improve your coding.",
+		"guidance": "At any time, use the menu below to navigate through the options your choice.",
 		"help": "What level do you want our conversation to be at?",
-		"choose_language": "Choose the programming language you would like to talk about from the below menu"
+		"choose_language": "Choose the programming language you would like to talk about from the below menu.",
+		"choose_another_language": "Choose another programming language you would like to talk about from the below menu."
+	},
+	"advance": {
+		"hint": "You get to ask advance level questions."
 	},
 	"not_available": {
 		"language_1": "Sorry, {{userFirstName}} I'm still working on educating myself with this language. Please take a pick on another language.",
@@ -81,7 +85,7 @@
 		"suggestion": "Your suggestion has been recorded for future review by the team. If this is something we need to get back to you right now just comment \"help\""
 	},
 	"fallback": {
-		"any": "Sorry, but I don’t recognize \"{{message}}\".",
+		"any": "Sorry, but I don’t recognize \"{{message}}\"! Trying Googling or DuckDuckGo-ing!",
 		"attachment": "Thanks for sending this attachment, we can connect you to an agent to review it or we can start over"
 	},
 	"care": {

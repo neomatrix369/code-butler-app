@@ -68,9 +68,14 @@ module.exports = class ProgrammingLanguages {
 
     switch (payload) {
       case "BASIC":
-      case "ADVANCE":
         response = Response.genQuickReply(
             i18n.__("get_started.choose_language"),
+            allLanguages()
+        )
+        break;
+      case "ADVANCE":
+        response = Response.genQuickReply(
+            i18n.__("get_started.choose_language") + " " + i18n.__("advance.hint"),
             allLanguages()
         )
         break;
@@ -88,7 +93,7 @@ module.exports = class ProgrammingLanguages {
       case "PROGRAMMING_LANGUAGE_FORTRAN":
         const responseText = i18n.__(getRandomKey(["not_available.language_1", "not_available.language_2"]), {
             userFirstName: this.user.firstName
-        }) + " " + i18n.__("get_started.choose_language");
+        }) + " " + i18n.__("get_started.choose_another_language");
         response = Response.genQuickReply(
             responseText,
             allLanguages()
