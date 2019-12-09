@@ -79,10 +79,17 @@ mv .sample.env .env
 #### 4. Run your app locally using the built-in web server<
 
 ```bash
+FLASK_ENV=development FLASK_APP=flask-torch-app.py flask run
+```
+
+Run the above ML server, in order to be able to send questions to the ML server and get an answer (if it can return one) with confidence scores. The server will stand up at [http://localhost:5000](http://localhost:5000) for REST API calls -- meant for internal use to the Chat app only.
+
+```bash
 node app.js
 ```
 
 You should now be able to access the application in your browser at [http://localhost:3000](http://localhost:3000)
+
 
 #### 5. Configure your webhook subcription and set the Messenger profile
 

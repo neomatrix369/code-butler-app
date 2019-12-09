@@ -10,14 +10,15 @@ model = None
 
 @app.route('/')
 def hello():
-    return 'Hello World!'
+	global model
+    return f'Flask app serving {model_name}!'
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    return jsonify({'class_id': 'IMAGE_NET_XXX', 'class_name': 'Cat'})
+@app.route('/status')
+def hello():
+    return 'OK!'
 
 def load_model_internal():
-	PATH='./roberta.base'
+	PATH='./roberta.large'
 	return RobertaModel.from_pretrained(PATH)
 
 @app.route('/loadModel')
