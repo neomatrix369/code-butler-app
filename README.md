@@ -58,14 +58,17 @@ You will need:
 #### 1. Install the dependencies
 
 ```bash
-$ npm install
-```
-
-```bash
+$ cd model-server
 $ pip install -r requirements.txt
 $ wget https://dl.fbaipublicfiles.com/fairseq/models/roberta.large.tar.gz
 $ tar xvzf roberta.large.tar.gz
 $ rm roberta.large.tar.gz
+```
+
+```bash
+$ cd ..
+$ cd app-server
+$ npm install
 ```
 
 #### 2. Install Local Tunnel
@@ -89,13 +92,17 @@ mv .sample.env .env
 #### 4. Run your app locally using the built-in web server<
 
 ```bash
-FLASK_ENV=development FLASK_APP=flask-torch-app.py flask run
+$ cd model-server
+$ FLASK_ENV=development FLASK_APP=flask-torch-app.py flask run
 ```
 
 Run the above ML server, in order to be able to send questions to the ML server and get an answer (if it can return one) with confidence scores. The server will stand up at [http://localhost:5000](http://localhost:5000) for REST API calls -- meant for internal use to the Chat app only.
 
+Open a new terminal session and run the below commands:
+
 ```bash
-node app.js
+$ cd app-server
+$ node app.js
 ```
 
 You should now be able to access the application in your browser at [http://localhost:3000](http://localhost:3000)
