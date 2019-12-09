@@ -137,6 +137,8 @@ heroku apps:create
 ```bash
 git add .
 git commit -m "My first commit"
+heroku buildpacks:set heroku/python
+heroku buildpacks:add --index 1 heroku/nodejs
 git push heroku master
 ```
 
