@@ -49,6 +49,7 @@ You will need:
 
 - [Node](https://nodejs.org/en/) 10.x or higher
 - [Localtunnel](https://github.com/localtunnel/localtunnel) or remote server like [Heroku](https://www.heroku.com/)
+- [Python](https://python.org/) 3.7 or higher
 
 # Usage
 
@@ -58,6 +59,13 @@ You will need:
 
 ```bash
 $ npm install
+```
+
+```bash
+$ pip install -r requirements.txt
+$ wget https://dl.fbaipublicfiles.com/fairseq/models/roberta.large.tar.gz
+$ tar xvzf roberta.large.tar.gz
+$ rm roberta.large.tar.gz
 ```
 
 #### 2. Install Local Tunnel
