@@ -1,6 +1,6 @@
 # Code Butler bot
 
-Code Butler is bot that assits learning about coding and programming languages in a fun way, created to showcase key features of the Messenger Platform. OC leverages key features to deliver a great customer experience. Using this demo as inspiration, you can create a delightful messaging experience.
+Code Butler is bot that assits learning about coding and programming languages in a fun way, created to showcase key features of the Messenger Platform. Code Butler leverages key features to deliver a great learning experience.
 
 [Access the Messenger experience](https://m.me/CodeButler?ref=GITHUB)
 
@@ -17,6 +17,8 @@ Code Butler is bot that assits learning about coding and programming languages i
 ## Setup Steps
 
 Before you begin, make sure you have completed all of the requirements listed above. At this point you should have a Page and a registered Facebook App.
+
+**Before going through the below steps, please watch this video on [How to create a Messenger Bot](https://www.youtube.com/watch?v=4NG2WqLYV-A), it will help with the below steps.**
 
 #### Get the App id and App Secret
 
@@ -138,6 +140,6 @@ git push heroku master
   Send a message to your Page from Facebook or in Messenger, if your webhook receives an event, you have fully set up your app! Voilà!
 
 ## License
-Sample Messenger App Code Butler is BSD licensed, as found in the LICENSE file.
+Messenger App Code Butler is BSD licensed, as found in the LICENSE file.
 
 See the [CONTRIBUTING](CONTRIBUTING.md) file for how to help out.
