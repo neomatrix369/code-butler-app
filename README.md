@@ -58,7 +58,6 @@ You will need:
 #### 1. Install the dependencies
 
 ```bash
-$ cd model-server
 $ pip install -r requirements.txt
 $ wget https://dl.fbaipublicfiles.com/fairseq/models/roberta.large.tar.gz
 $ tar xvzf roberta.large.tar.gz
@@ -66,8 +65,6 @@ $ rm roberta.large.tar.gz
 ```
 
 ```bash
-$ cd ..
-$ cd app-server
 $ npm install
 ```
 
@@ -92,7 +89,6 @@ mv .sample.env .env
 #### 4. Run your app locally using the built-in web server<
 
 ```bash
-$ cd model-server
 $ FLASK_ENV=development FLASK_APP=flask-torch-app.py flask run
 ```
 
@@ -138,7 +134,7 @@ heroku apps:create
 git add .
 git commit -m "My first commit"
 heroku buildpacks:set heroku/python
-heroku buildpacks:add --index 1 heroku/nodejs
+heroku buildpacks:add heroku/nodejs
 git push heroku master
 ```
 
